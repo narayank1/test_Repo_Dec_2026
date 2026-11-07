@@ -18,5 +18,7 @@ jobs:
 # this step will install the linter code
         - name: Install Linter
           run: pip install run
+        - name: check the file for linting
+          run: ruff check .
           
           
