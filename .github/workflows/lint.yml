@@ -16,9 +16,10 @@ jobs:
         - name: checkout/clone the code
           uses: actions/checkout@v4
 		  
-		- name: Set up Python
-          uses: actions/setup-python@v5
-          with: python-version: '3.14'
+          name: Set up Python
+          uses: actionssetup-python@v3
+          with: 
+		    python-version: "3.14"
 		  
 	# this step will install the linter code
         - name: Install Linter
