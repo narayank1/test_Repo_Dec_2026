@@ -32,6 +32,12 @@ jobs:
         with:
           username: ${{ vars.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
+          
+      - name: Docker build and push
+        uses: docker/build-push-action@v4
+        with:
+          push: true
+          tags: ${{ vars.DOCKERHUB_USERNAME }}/dev-fe-master:latest
 
       # this step will install the linter code
       - name: Install Linter
