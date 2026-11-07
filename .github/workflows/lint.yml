@@ -18,8 +18,7 @@ jobs:
 		  
         - name: Set up Python
           uses: actions/setup-python@v5
-          with:
-               python-version: '3.14'
+          with: python-version: '3.14'
 			   
         - name: Docker Setup
           uses: docker/login-action@v4
@@ -33,6 +32,6 @@ jobs:
         #- name: Install dependencies
         #  run: pip install -r requirements.txt
         - name: check the file for linting
-          run: ruff check 
+          run: ruff check .
           
           
