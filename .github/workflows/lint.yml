@@ -20,8 +20,8 @@ jobs:
          #  run: python3 -m pip install --upgrade pip
         - name: Install Linter
           run: pip install ruff
-        - name: Install dependencies
-          run: pip install -r requirements.txt
+        #- name: Install dependencies
+        #  run: pip install -r requirements.txt
         - name: check the file for linting
           run: ruff check .
           
