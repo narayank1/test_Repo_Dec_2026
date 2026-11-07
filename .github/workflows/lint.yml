@@ -6,7 +6,7 @@ name: Auto Lynter
 
 on: 
   push:
-    paths: "**.py"
+    paths: "*.py"
 	
 jobs:
    code:
@@ -16,16 +16,14 @@ jobs:
         - name: checkout/clone the code
           uses: actions/checkout@v4
 		  
-        - name: Set up Python
+		- name: Set up Python
           uses: actions/setup-python@v5
           with: python-version: '3.14'
 		  
-# this step will install the linter code
+	# this step will install the linter code
         - name: Install Linter
           run: pip install ruff
         #- name: Install dependencies
         #  run: pip install -r requirements.txt
         - name: check the file for linting
           run: ruff check .
-          
-          
