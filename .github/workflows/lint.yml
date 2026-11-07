@@ -18,12 +18,12 @@ jobs:
         - name: Set up Python
           uses: actions/setup-python@v5
           with:
-            python-version: '3.14'
-        - name: Docker Setup [Login to docker hub]
-		      uses: docker/login-action@v4
-		      with:
-		        username: ${{ vars.DOCKERHUB_USERNAME }}
-			      password: ${{ secrets.DOCKERHUB_TOKEN }}
+               python-version: 3.14
+        - name: Docker Setup
+		  uses: docker/login-action@v4
+		  with:
+		    username: ${{ vars.DOCKERHUB_USERNAME }}
+		    password: ${{ secrets.DOCKERHUB_TOKEN }}
 			
 # this step will install the linter code
         - name: Install Linter
