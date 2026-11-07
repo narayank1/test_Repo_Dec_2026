@@ -1,5 +1,5 @@
 # this is the test file to test the code and ggithub actions.
-# checking the linting flask test and commint
+# checking the linting flask
 from flask import Flask, render_template
 app = Falsk(name)
 
