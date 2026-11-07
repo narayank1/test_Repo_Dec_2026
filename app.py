@@ -1,7 +1,7 @@
 # this is the test file to test the code and ggithub actions.
 # checking the linting flask 
 from flask import Flask, render_template
-app = Flask(_name_)
+app = Flask(name)
 
 @app.route('/')
 def hello_world():
