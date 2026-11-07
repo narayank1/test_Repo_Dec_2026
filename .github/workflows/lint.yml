@@ -2,29 +2,37 @@
 # Goal: whenever someone change the python code the liner check if
 # the syntex, format, indentation (linting) is correct or not.
 
+# what is the goal of the lint file
+# Goal: whenever someone changes the python code, the linter checks
+# if the syntax, format, indentation (linting) is correct or not.
+
 name: Auto Lynter
 
-on: 
+on:
   push:
-    paths: "*.py"
-	
+    paths: 
+      - "*.py"
+
 jobs:
-   code:
-      runs-on: ubuntu-latest
-      #this steps will autometically clone the code of current branch into the runner
-      steps:
-        - name: checkout/clone the code
-          uses: actions/checkout@v4
-		  
-          name: Set up Python
-          uses: actionssetup-python@v3
-          with: 
-		    python-version: "3.14"
-		  
-	# this step will install the linter code
-        - name: Install Linter
-          run: pip install ruff
-        #- name: Install dependencies
-        #  run: pip install -r requirements.txt
-        - name: check the file for linting
-          run: ruff check .
+  code:
+    runs-on: ubuntu-latest
+
+    # this step will automatically clone the code of current branch into the runner
+    steps:
+      - name: checkout/clone the code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.14"
+
+      # this step will install the linter code
+      - name: Install Linter
+        run: pip install ruff
+
+      # - name: Install dependencies
+      #   run: pip install -r requirements.txt
+
+      - name: check the file for linting
+        run: ruff check .
