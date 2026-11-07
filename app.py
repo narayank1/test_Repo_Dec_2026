@@ -5,7 +5,7 @@ app = Falsk(name)
 
 @app.route('/')
 def hello_world():
-return render_teplate('index.html')
+return render_template('index.html')
 
 @app.route('/health')
 def health():
