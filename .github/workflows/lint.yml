@@ -1,0 +1,22 @@
+#what is the goal of the lint file
+# Goal: whenever someone change the python code the liner check if
+# the syntex, format, indentation (linting) is correct or not.
+
+name: Auto Lynter
+
+on: 
+  push:
+    paths: "*.py"
+
+jobs:
+   code:
+      runs-on: ubuntu-latest
+      #this steps will autometically clone the code of current branch into the runner
+      steps:
+        - name: checkout/clone the code
+          uses: actions/checkout@v4
+# this step will install the linter code
+        - name: Install Linter
+          run: pip install run
+          
+          
