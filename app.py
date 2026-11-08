@@ -1,5 +1,5 @@
 # this is the test file to test the code and ggithub actions.
-# checking the linting flask. Push the image on docker hub. 
+# checking the linting flask. Push the image on docker hub. test
 from flask import Flask, render_template
 
 app = Flask(__name__)
